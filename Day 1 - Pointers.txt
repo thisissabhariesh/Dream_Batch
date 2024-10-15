@@ -1,0 +1,145 @@
+Dream Batch
+Day 1 - Pointers
+15/10/24
+
+Pointer is a variable that possess the address of another variable.
+we need to use * symbol.
+
+1)
+#include<iostream>
+using namespace std;
+int main(){
+int a=10;
+int *b = &a;
+int arr[] = {1,2,3,4,5}
+cout<<a<<endl;
+cout<<*b<<endl;
+cout<<&a<<endl;
+cout<<arr<<endl;
+}
+
+& - address (reference)
+* - to get the value of variable (dereference)
+
+2)
+#include<iostream>
+using namespace std;
+int main(){
+int a=10;
+int *b = &a;
+int arr[]={1,2,3,4,5};
+char str[]="hello";
+
+cout<<*str<<endl;
+cout<<*(str+1)<<endl;
+cout<<arr<<endl;
+cout<<*arr<<endl;
+cout<<&arr[0]<<endl;
+cout<<arr[0]<<endl;
+}
+
+Problems:-
+Swapping
+
+#include<iostream>
+using namespace std;
+void swap(int *a,int *b){
+int temp=*a;
+*a=*b;
+*b=temp;
+cout<<*a<<" "<<*b<<endl;
+}
+int main(){
+int a=10;
+int b=20;
+swap(&a,&b);
+cout<<a<<" "<<b<<endl;
+}
+
+Max Element
+
+#include<iostream>
+using namespace std;
+int findMax(int *arr,int n){
+int max=*arr;
+for(int i=1;i<n;i++){
+if(*(arr+i)>max){
+max=*(arr+i);
+}
+}
+return max;
+}
+int main(){
+int a[]={10,42,5,23,1};
+int n=sizeof(a)/sizeof(a[0]);
+cout<<findMax(a,n)<<endl;
+}
+
+The max elemnt in the array is compared. We need to handle withthe value so * is used.
+
+Sum of numbers:
+
+#include<iostream>
+using namespace std;
+void findMax(char *a,int n){
+char *start = a;
+char *end = a+n-1;
+while(start<end){
+char temp=*start;
+*start=*end;
+*end=temp
+start++;
+end--;
+}
+}
+int main(){
+char a[]="hello";
+int n=sizeof(a)/sizeof(a[0]);
+findMax(a,n)
+
+Reverse a String
+
+#include<iostream>
+using namespace std;
+
+void copy(char *d,char *a){
+while(*a!='\0'){
+while(*a!='\0'){
+*d = *a;
+a++;
+d++;
+}
+*d='\0';
+}
+int main(){
+char a[] = "hello";
+char d[25];
+copy(d,a);
+cout<<d<<endl;
+return 0;
+}
+
+
+#include<iostream>
+using namespace std;
+bool search(char *a,char target){
+int n = sizeof(a)/sizeof(a[0]);
+for(int i=0;i<n;i++){
+if(*(a+i)==target){
+return true;
+}
+}
+return false;
+}
+int main(){
+char a[]="hello";
+char target='e';
+int n=sizeof(a)/sizeof(a[0]);
+if(search(a,target)){
+cout<<"present"<<endl;
+}
+else{
+cout<<"absent"<<endl;
+}
+return 0;
+}
