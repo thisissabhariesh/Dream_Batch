@@ -1,0 +1,189 @@
+Day 2 - Pattern Programs
+16/10/24
+
+
+6
+
+9
+
+  1 2 3 4 5 6
+  7 8 9 10 11 12
+  13 4 5 6 7 8 
+ >row*col-col <= row*col
+
+import java.util.*;
+public class main{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        int row = sc.nextInt();
+        int col = sc.nextInt();
+        int treeNo= sc.nextInt();
+        if((treeNo>=1 && treeNo<=col) || treeNo%col==1 || treeNo%4==0){
+            System.out.print("Mango Tree");
+        }else{
+            System.out.print("Apple Tree");
+        }
+    }
+}
+
+
+Pattern Problems
+
+1) Hollow Rectangle:-
+
+import java.util.Scanner;
+public class Main{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        int row=4;
+        int col=6;
+        
+        for(int i=1;i<=row;i++){
+            for(int j=1;j<=col;j++){
+                if(i==1 || j==1 || i==row || j==col){
+                    System.out.print("*");
+                }else{
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+2) Hollow Square:-
+
+import java.util.Scanner;
+public class Main{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        int n = sc.nextInt();
+        for(int i=1;i<=n;++i){
+            for(int j=1;j<=n;++j){
+                if(i==1||i==n||j==1||j==n){
+                    System.out.print("* ");
+                }else{
+                    System.out.print("  ");
+                }
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+3) Right Triangle
+
+import java.util.*;
+public class Main{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        int row=4;
+        for(int i=1;i<=row;i++){
+            for(int k=1;k<=row;k++){
+                System.out.print(" ");
+            }
+            for(int j=1;j<=i;j++){
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+4) Pyramid:-
+
+import java.util.*;
+public class Main{
+    public static void main(String args[]){
+        Scanner sc= new Scanner(System.in);
+        int row=4;
+        for(int i=1;i<=row;i++){
+            for(int k=1;k<=row-i;k++){
+                System.out.print(" ");
+            }
+            for(int j=1;j<=2*i-1;j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+5) Half Pyramid:-
+
+import java.util.*;
+public class PatternProgram{
+    public static void main(String args[]){
+        int rows=10;
+        for(int i=1;i<=10;i++){
+            for(int j=1;j<=i;j++){
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+}    
+
+6) Half Pyramid with Numbers:-
+
+import java.util.*;
+public class PatternProgram{
+    public static void main(String args[]){
+        int rows=10;
+        for(int i=1;i<=10;i++){
+            for(int j=1;j<=i;j++){
+                System.out.print(j+" ");
+            }
+            System.out.println();
+        }
+    }
+}    
+
+7) Reverse Full Triangle:-
+
+import java.util.*;
+public class pattern{
+    public static void main(String args[]){
+        int rows=5;
+        for(int i=5;i>=1;i--){
+            for(int j=1;j<=rows-i;j++){
+                System.out.print(" ");
+            }
+            for(int k=1;k<=i*2-1;k++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+8) Diamond Pattern:- 
+
+import java.util.*;
+public class PatternProgram{
+    public static void main(String args[]){
+        for(int i=1;i<=5;i++){
+            for(int s=1;s<=5-i;s++){
+                System.out.print(" ");
+            }
+            for(int j=1;j<=i*2-1;j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        for(int i=4;i>=1;i--){
+            for(int s=1;s<=5-i;s++){
+                System.out.print(" ");
+            }
+            for(int j=1;j<=i*2-1;j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}    
